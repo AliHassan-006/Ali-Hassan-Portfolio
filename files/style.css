@@ -117,46 +117,48 @@ body {
   }
   
   /* Media Query for small screens */
-@media screen and (max-width: 600px) {
-  .navbar {
-    height: 60px; /* Adjust the height for smaller screens */
-    display: flex;
-    justify-content: center; /* Center the child elements horizontally */
-    align-items: center; /* Center the child elements vertically */
-    position: relative; /* Set position relative for absolute positioning of children */
+  @media screen and (max-width: 600px) {
+    .switch {
+      width: 40px; /* Adjust width for smaller screens */
+      height: 20px; /* Adjust height for smaller screens */
+      border-radius: 10px; /* Adjust border radius for smaller screens */
+      position: relative;
+      display: flex;
+      align-items: center; /* Center items vertically */
+      justify-content: center; /* Center items horizontally */
+    }
+    
+    .flicker {
+      width: 15px; /* Adjust width for smaller screens */
+      height: 15px; /* Adjust height for smaller screens */
+      border-radius: 7.5px; /* Adjust border radius for smaller screens */
+      top: 50%; /* Position flicker at the vertical center */
+      left: 5px; /* Adjust left position */
+      transform: translateY(-50%); /* Center flicker vertically */
+      transition: 0.3s;
+      box-shadow: 
+        inset 2px 2px 2px rgb(255,255,255),
+        inset -2px -2px 2px rgb(195 193 198 / 90%);
+    }
+    
+    .dark .flicker {
+      transform: translateX(20px); /* Adjust flicker position when dark */
+    }
+    
+    .moon {
+      width: 10px; /* Adjust width for smaller screens */
+      height: 10px; /* Adjust height for smaller screens */
+      border-radius: 5px; /* Adjust border radius for smaller screens */
+      top: 50%; /* Position moon at the vertical center */
+      left: 25px; /* Adjust left position */
+      transform: translateY(-50%); /* Center moon vertically */
+      box-shadow: 2px 2px 0 0 rgb(255, 255, 255); /* Adjust moon shadow */
+    }
+    
+    .dark > * {
+      color:rgb(57, 57, 57); /* Adjust color for dark mode */
+    }
   }
-
-  .navbar-content {
-    display: flex;
-    justify-content: center; /* Center the content horizontally */
-    align-items: center; /* Center the content vertically */
-    position: relative; /* Set position relative for absolute positioning of children */
-  }
-
-  .switch {
-    width: 60px; /* Adjust size for small screens */
-    height: 30px; /* Adjust size for small screens */
-  }
-
-  .flicker {
-    width: 20px; /* Adjust size for small screens */
-    height: 20px; /* Adjust size for small screens */
-    position: absolute;
-    top: 50%; /* Move the top of the element to the middle of its parent */
-    left: 50%; /* Move the left of the element to the middle of its parent */
-    transform: translate(-50%, -50%); /* Center the element precisely */
-  }
-
-  .moon {
-    width: 15px; /* Adjust size for small screens */
-    height: 15px; /* Adjust size for small screens */
-    position: absolute;
-    top: 50%; /* Move the top of the element to the middle of its parent */
-    left: 50%; /* Move the left of the element to the middle of its parent */
-    transform: translate(-50%, -50%); /* Center the element precisely */
-  }
-}
-
   
 /*home*/
 
