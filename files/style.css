@@ -62,6 +62,14 @@ body {
 
 
 
+/*   
+.navbar {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 80px; 
+    background-color: #333; 
+  } */
   
   .switch {
     width: 80px;
@@ -107,6 +115,48 @@ body {
   .dark > * {
     color:rgb(57, 57, 57);
   }
+  
+  /* Media Query for small screens */
+@media screen and (max-width: 600px) {
+  .navbar {
+    height: 60px; /* Adjust the height for smaller screens */
+    display: flex;
+    justify-content: center; /* Center the child elements horizontally */
+    align-items: center; /* Center the child elements vertically */
+    position: relative; /* Set position relative for absolute positioning of children */
+  }
+
+  .navbar-content {
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    position: relative; /* Set position relative for absolute positioning of children */
+  }
+
+  .switch {
+    width: 60px; /* Adjust size for small screens */
+    height: 30px; /* Adjust size for small screens */
+  }
+
+  .flicker {
+    width: 20px; /* Adjust size for small screens */
+    height: 20px; /* Adjust size for small screens */
+    position: absolute;
+    top: 50%; /* Move the top of the element to the middle of its parent */
+    left: 50%; /* Move the left of the element to the middle of its parent */
+    transform: translate(-50%, -50%); /* Center the element precisely */
+  }
+
+  .moon {
+    width: 15px; /* Adjust size for small screens */
+    height: 15px; /* Adjust size for small screens */
+    position: absolute;
+    top: 50%; /* Move the top of the element to the middle of its parent */
+    left: 50%; /* Move the left of the element to the middle of its parent */
+    transform: translate(-50%, -50%); /* Center the element precisely */
+  }
+}
+
   
 /*home*/
 
@@ -320,33 +370,46 @@ body {
     background-color: rgb(188, 200, 221);
   }
   
-
-
-
-
-/* .img {
-    display: inline-block;
-    left: 55%;
-    bottom: 15%;
-    margin-right: 5%;
-    padding: 0;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    position: absolute;
-    opacity: 0;
-    animation: slideUP 1s ease forwards;
-    animation-delay: 1s;
-}
-
-.responsive {
-    width: 100%;
-    height: auto;
-    border-top-left-radius: 251px;
-    border-top-right-radius: 251px;
-    border-bottom-left-radius: 251px;
-    border-bottom-right-radius: 251px;
-} */
+  @media screen and (max-width: 600px) {
+    .hero-image {
+      width: 100%; /* Adjust width to fit the entire screen */
+      height: auto; /* Let the height adjust automatically */
+      position: static; /* Remove absolute positioning */
+      display: block; /* Change to block display */
+      margin: 0 auto; /* Center the image */
+      left: auto; /* Remove left positioning */
+      bottom: auto; /* Remove bottom positioning */
+    }
+  
+    .cube,
+    .cube:before,
+    .cube:after {
+      width: 40px; /* Adjust size for smaller screens */
+      height: 40px; /* Adjust size for smaller screens */
+    }
+  
+    #html,
+    #css,
+    #javascript,
+    #react {
+      position: static; /* Remove absolute positioning */
+      display: block; /* Change to block display */
+      margin: 20px auto; /* Center the elements horizontally with some spacing */
+      bottom: auto; /* Remove bottom positioning */
+      left: auto; /* Remove left positioning */
+    }
+  
+    #html:before,
+    #html:after,
+    #css:before,
+    #css:after,
+    #javascript:before,
+    #javascript:after,
+    #react:before,
+    #react:after {
+      display: none; /* Hide the pseudo-elements on smaller screens */
+    }
+  }
 
 /*about*/
 
@@ -429,6 +492,32 @@ body {
 .abtbtn-box:hover {
     box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 50pc cyan, 0 0 100px cyan, 0 0 200px cyan;
 }
+
+@media screen and (max-width: 600px) {
+    .about {
+      padding-top: 20px; /* Adjust top padding */
+      grid-template-columns: 1fr; /* Switch to a single column layout */
+      justify-content: center; /* Center the content horizontally */
+    }
+    
+    .about-img {
+      padding-right: 0; /* Remove padding */
+      margin-bottom: 20px; /* Add space between image and text */
+    }
+    
+    .about-text {
+      text-align: center; /* Center text horizontally */
+      margin-right: 0; /* Remove right margin */
+    }
+    
+    .abtbtn-box {
+      font-size: 14px; /* Reduce font size */
+      padding: 10px 20px; /* Adjust padding */
+      margin-top: 20px; /* Add margin */
+      align-items: center;
+    }
+  }
+  
 
 
 /* Skills */
@@ -1455,7 +1544,7 @@ body {
     .home{
         width: 100%;
         align-items: normal;
-        padding-top: 40%;
+        padding-top: 50%;
         padding-bottom: 0;
     }
     .home-content h1 {
