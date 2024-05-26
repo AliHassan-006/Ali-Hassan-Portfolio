@@ -160,6 +160,7 @@ body {
     }
   }
   
+  
 /*home*/
 
 .home {
@@ -263,155 +264,149 @@ body {
     box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 50pc cyan, 0 0 100px cyan, 0 0 200px cyan;
 }
 
+/* book images */
 
-.hero-image {
+.container5 {
     width: 50%;
     height: 350px;
     display: inline-block;
-    left: 55%;
+    left: 67%;
     bottom: 15%;
     margin-right: 5%;
     padding: 0;
     position: absolute;
-    
-  }
-  
-  .cube {
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    transform: rotate(-25deg) skew(25deg);
-  }
-  
-  .cube:before {
-    position: absolute;
-    content: "";
-    width: 21px;
-    height: 100%;
-    transform: skewY(-45deg);
-    left: -20px;
-    bottom: -10px;
-  }
-  
-  .cube:after {
-    position: absolute;
-    content: "";
+    --circleDiameter: 300px;
+    --planets: calc(var(--circleDiameter) / 5)
+}
+
+.hero-circle {
+    position:relative;
+    width: var(--circleDiameter);
+    height: var(--circleDiameter)
+}
+.inner-img {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  overflow:hidden;
+  border-radius:10px;
+  width:90px;
+  height:90px;
+}
+
+.hero-rotate {
+    position: relative;
+    top: -7px;
+    left:-7px;
     width: 100%;
-    height: 21px;
-    transform: skewX(-45deg);
-    left: -10px;
-    bottom: -20px;
-  }
-  
-  #html {
-    left: 100px;
-    bottom: 80px;
-    background-image: url("./img/html-square.png");
-    background-size: cover;
-    background-color: rgb(175, 119, 227);
-    box-shadow: -60px 60px 20px rgb(50 50 50/ 15%);
-  }
-  
-  #html:before {
-    background-color: rgb(189, 154, 221);
-  }
-  
-  #html:after {
-    background-color: rgb(205, 188, 221);
-  }
-  
-  #css {
-    left: 250px;
-    bottom: 240px;
-    background-image: url("img/css-square.png");
-    background-size: cover;
-    background-color: rgb(227, 119, 191);
-    box-shadow: -100px 100px 20px rgb(50 50 50/ 15%);
-  }
-  
-  #css:before {
-    background-color: rgb(221, 154, 207);
-  }
-  
-  #css:after {
-    background-color: rgb(221, 188, 211);
-  }
-  
-  #javascript {
-    left: 450px;
-    bottom: 200px;
-    background-image: url("https://Alihassan-006.github.io/repo-name/img/javascript-square.png");
-    background-size: cover;
-    background-color: rgb(119, 227, 186);
-    box-shadow: -40px 40px 20px rgb(50 50 50/ 15%);
-  }
-  
-  #javascript:before {
-    background-color: rgb(154, 221, 202);
-  }
-  
-  #javascript:after {
-    background-color: rgb(188, 221, 212);
-  }
-  
-  
-  #react {
-    left: 350px;
-    bottom: 40px;
-    background-image: url(".img/react-square.png");
-    background-size: cover;
-    background-color: rgb(119, 193, 227);
-    box-shadow: -80px 80px 20px rgb(50 50 50/ 15%);
-  }
-  
-  #react:before {
-    background-color: rgb(154, 189, 221);
-  }
-  
-  #react:after {
-    background-color: rgb(188, 200, 221);
-  }
-  
-  @media screen and (max-width: 600px) {
-    .hero-image {
-      width: 100%; /* Adjust width to fit the entire screen */
-      height: auto; /* Let the height adjust automatically */
-      position: static; /* Remove absolute positioning */
-      display: block; /* Change to block display */
-      margin: 0 auto; /* Center the image */
-      left: auto; /* Remove left positioning */
-      bottom: auto; /* Remove bottom positioning */
+    height: 100%;
+    border: 7px solid white;
+    border-radius: 100%;
+    animation: rotate 30s linear infinite;
+}
+
+.planet {
+    position: absolute;
+    width: var(--planets);
+    aspect-ratio: 1;
+    border-radius: 100%;
+    animation: maintain 30s linear infinite;
+}
+
+
+.planet:nth-child(1) {
+    top: calc(-1 * var(--planets) / 2);
+    left: calc(var(--circleDiameter)/ 2 - var(--planets) / 2 - 5px)
+}
+
+.planet:nth-child(2) {
+    top: calc(var(--circleDiameter)/ 2 - var(--planets) / 2 - 5px);
+    right: calc(-1 * var(--planets) / 2);
+}
+
+.planet:nth-child(3) {
+    top: calc(var(--circleDiameter)/ 2 - var(--planets) / 2 - 5px);
+    left: calc(-1 * var(--planets) / 2);
+}
+
+.planet:nth-child(4) {
+    left: calc(var(--circleDiameter)/ 2 - var(--planets) / 2 - 5px);
+    bottom: calc(-1 * var(--planets) / 2);
+}
+
+.planet>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    animation: scale 1s linear infinite alternate;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0)
     }
-  
-    .cube,
-    .cube:before,
-    .cube:after {
-      width: 40px; /* Adjust size for smaller screens */
-      height: 40px; /* Adjust size for smaller screens */
+
+    100% {
+        transform: rotate(360deg);
     }
-  
-    #html,
-    #css,
-    #javascript,
-    #react {
-      position: static; /* Remove absolute positioning */
-      display: block; /* Change to block display */
-      margin: 20px auto; /* Center the elements horizontally with some spacing */
-      bottom: auto; /* Remove bottom positioning */
-      left: auto; /* Remove left positioning */
+}
+
+@keyframes maintain {
+    0% {
+        transform: rotate(0);
     }
-  
-    #html:before,
-    #html:after,
-    #css:before,
-    #css:after,
-    #javascript:before,
-    #javascript:after,
-    #react:before,
-    #react:after {
-      display: none; /* Hide the pseudo-elements on smaller screens */
+
+    100% {
+        transform: rotate(-360deg);
     }
-  }
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .container5 {
+        width: 100%; /* Adjust width to fit the entire screen */
+        height: auto; /* Let the height adjust automatically */
+        position: static; /* Remove absolute positioning */
+        display: block; /* Change to block display */
+        margin: 25px 25px; /* Center the image */
+        left: auto; /* Remove left positioning */
+        bottom: auto; /* Remove bottom positioning */
+        overflow:hidden;
+        --circleDiameter: 200px;
+        --planets: calc(var(--circleDiameter) / 5);
+    }
+    .inner-img {
+        width: 60px;
+        height: 60px;
+    }
+    .hero-rotate {
+        position: static;
+        
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .container5 {
+       
+        --circleDiameter: 200px;
+        --planets: calc(var(--circleDiameter) / 5); 
+    }
+    
+}
 
 /*about*/
 
