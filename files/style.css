@@ -659,7 +659,7 @@ body {
 }
 
 .progress-line.cpls span::after {
-    content: "60%";
+    content: "800%";
 }
 
 .progress-line span::before {
