@@ -626,7 +626,7 @@ body {
 }
 
 .progress-line.cpls span {
-    width: 50%;
+    width: 80%;
 }
 
 .progress-line span::after {
